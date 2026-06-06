@@ -1,9 +1,8 @@
 import express from 'express'
+import { runCheck } from '../controllers/checkerController.js'
 
 const router = express.Router()
 
-router.get('/', (req, res) => {
-  res.json({ message: 'Checker route is working' })
-})
+router.post('/', runCheck)
 
 export default router

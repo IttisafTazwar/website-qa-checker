@@ -1,9 +1,14 @@
 import express from 'express'
+import {
+  getReportById,
+  getReportByShareableLink,
+  getAllReports,
+} from '../controllers/reportController.js'
 
 const router = express.Router()
 
-router.get('/', (req, res) => {
-  res.json({ message: 'Report route is working' })
-})
+router.get('/', getAllReports)
+router.get('/:id', getReportById)
+router.get('/share/:link', getReportByShareableLink)
 
 export default router
