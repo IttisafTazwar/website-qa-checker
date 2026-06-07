@@ -1,10 +1,19 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Navbar from './components/Navbar'
+import Home from './pages/Home'
+import Results from './pages/Results'
+import Report from './pages/Report'
+
 function App() {
   return (
-    <div>
-      <h1 className="text-3xl font-bold text-center mt-10">
-        Website QA Checker
-      </h1>
-    </div>
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/results/:id" element={<Results />} />
+        <Route path="/report/:link" element={<Report />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
